@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{titulo}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let n of cursosObj">
+    <img src="{{n.foto}}">
+    <ion-card-content>
+      <ion-card-title>
+
+      </ion-card-title>
+      <p>precio:{{n.precio.toFixed(2)}} bs</p>
+      <button ion-button icon-end *ngIf="n.disponible">
+        inscribirse
+        <ion-icon name="add-circle"> </ion-icon>
+      </button>
+      <p *ngIf="!n.disponible">no disponible</p>
+    </ion-card-content>
+  </ion-card>
+  {{subtitulo}}
+  <ion-list>
+    <ion-item *ngFor=" let n of cursos"> 
+      {{n}}
+
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor=" let n of cursosObj">
+      <ion-avatar item-start>
+        <img src="{{n.foto}}">
+      </ion-avatar>
+      <h2>{{n.nombre}}</h2>
+      <p>{{n.precio.toFixed(2)}}bs</p>
+      <button *ngIf="n.disponible" ion-button icon-only item-end clear>
+          <ion-icon name="add-circle"></ion-icon>
+      </button>
+      <p item-end *ngIf="!n.disponible">no disponible</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>IniciarSesion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="error" *ngIf="error">
+    {{mensaje}}
+  </div>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input [(ngModel)]="usuario" type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [(ngModel)]="clave" type="password"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  <button ion-button (click)="verificarUsuario()">
+    Iniciar Sesión
+  </button>
+</ion-content>

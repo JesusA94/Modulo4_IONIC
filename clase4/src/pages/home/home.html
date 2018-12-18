@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Listado de Cursos
+    </ion-title>
+    <ion-buttons>
+      <button ion-button icon-only (click)="nuevo()">
+          <ion-icon name="add">
+          </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let c of cursos" (click)="verDetalle(c)">
+      {{c.nombre}} - {{c.precio}} 
+    </button>
+  </ion-list>
+  <button ion-button (click)="cerrarSesion()">
+    Cerrar Sesión
+  </button>
+</ion-content>
